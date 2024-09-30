@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP Client</title>
+</head>
+<body>
+    <h1>HTTP Client</h1>
+
+    <label for="url">URL:</label>
+    <input type="text" id="url" placeholder="https://example.com" />
+
+    <label for="method">Método:</label>
+    <select id="method">
+        <option value="GET">GET</option>
+        <option value="POST">POST</option>
+        <option value="PUT">PUT</option>
+        <option value="DELETE">DELETE</option>
+    </select>
+
+    <label>Respuesta como:</label>
+    <input type="radio" id="raw" name="responseType" value="raw" checked />
+    <label for="raw">Raw</label>
+    <input type="radio" id="html" name="responseType" value="html" />
+    <label for="html">HTML</label>
+
+    <button id="consultar">Consultar</button>
+    <button id="guardar">Guardar respuesta</button>
+
+    <h2>Resultado</h2>
+    <div id="status"></div>
+    <div id="mimeType"></div>
+    <pre id="body"></pre>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
