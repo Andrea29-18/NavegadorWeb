@@ -19,6 +19,10 @@
         <option value="DELETE">DELETE</option>
     </select>
 
+    <!-- Campo adicional para el cuerpo de la petición -->
+    <label for="body">Cuerpo de la solicitud (solo para POST/PUT):</label>
+    <textarea id="requestBody" rows="6" cols="50" placeholder='{"title": "foo", "body": "bar", "userId": 1}'></textarea>
+
     <label>Respuesta como:</label>
     <input type="radio" id="raw" name="responseType" value="raw" checked />
     <label for="raw">Raw</label>

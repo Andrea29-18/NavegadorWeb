@@ -5,6 +5,7 @@ document.getElementById('consultar').addEventListener('click', async () => {
     const url = document.getElementById('url').value;
     const method = document.getElementById('method').value;
     const responseType = document.querySelector('input[name="responseType"]:checked').value;
+    const requestBody = document.getElementById('requestBody').value; // Tomar el cuerpo de la solicitud
 
     console.log(`Realizando petición a URL: ${url} con método: ${method}`);
 
@@ -14,10 +15,26 @@ document.getElementById('consultar').addEventListener('click', async () => {
     }
 
     try {
-        const response = await axios({
+        // Configuración básica para las peticiones
+        const config = {
             method,
             url,
-        });
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        };
+
+        // Solo agregar cuerpo para POST y PUT
+        if (method === 'POST' || method === 'PUT') {
+            if (requestBody) {
+                config.data = JSON.parse(requestBody);
+            } else {
+                alert('Por favor ingresa un cuerpo de solicitud válido para POST o PUT.');
+                return;
+            }
+        }
+
+        const response = await axios(config);
 
         console.log('Respuesta recibida:', response);
 
