@@ -56,7 +56,7 @@ Las dependencias se pueden instalar usando **npm**.
 ├── src/
 │   ├── index.html  # Archivo principal HTML
 │   ├── renderer.js # Lógica de la interfaz gráfica y manejo de eventos
-├── main.js         # Archivo principal que inicia Electron
+    ├── main.js     # Archivo principal que inicia Electron
 ├── package.json    # Archivo de configuración del proyecto
 └── README.md       # Documentación del proyecto
 ```
